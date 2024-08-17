@@ -4,13 +4,22 @@ let btns  = document.querySelectorAll(".btn")
 // console.log(btns)
 let inp = document.querySelector(".inp")
 
+let cal = false;
+
 for( btn of btns){
     btn.addEventListener("click", (e)=>{
         // console.log(e.target.innerText)
         if(e.target.innerText != "DEL" && e.target.innerText != "=" && e.target.innerText != "RESET"){
 
             // console.log(e.target.innerText)
-            inp.innerText =  inp.innerText + e.target.innerText
+             if(cal == false){
+
+                inp.innerText =  inp.innerText + e.target.innerText
+            }
+            else{
+                inp.innerText = e.target.innerText
+                cal = false;
+            }
         }
 
         if(e.target.innerText == "DEL"){
@@ -23,6 +32,7 @@ for( btn of btns){
 
         if(e.target.innerText == "RESET"){
             inp.innerText = "0"
+            cal = true;
         }    
 
         if(e.target.innerText == "="){
