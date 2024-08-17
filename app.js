@@ -22,7 +22,7 @@ for( btn of btns){
         }
 
         if(e.target.innerText == "RESET"){
-            inp.innerText = ""
+            inp.innerText = "0"
         }    
 
         if(e.target.innerText == "="){
